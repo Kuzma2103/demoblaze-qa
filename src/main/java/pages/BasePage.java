@@ -36,6 +36,10 @@ public class BasePage {
         return driver.findElement(elementBy).getText();
     }
 
+    public String readTextFromAlertBox() {
+        return driver.switchTo().alert().getText();
+    }
+
     public void assertStringEquals(String string, String expectedText) {
         Assert.assertEquals(string, expectedText);
     }

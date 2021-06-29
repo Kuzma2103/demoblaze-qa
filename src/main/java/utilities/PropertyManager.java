@@ -7,6 +7,8 @@ public class PropertyManager {
 
     private static String driverPath;
     private static String url;
+    private static String reg_email;
+    private static String reg_password;
 
     public static PropertyManager getInstance() {
 
@@ -22,6 +24,8 @@ public class PropertyManager {
 
         driverPath = properties.getProperty("driverPath");
         url = properties.getProperty("url");
+        reg_email = properties.getProperty("reg_email");
+        reg_password = properties.getProperty("reg_password");
 
         return instance;
     }
@@ -33,5 +37,13 @@ public class PropertyManager {
 
     public String getURL() {
         return url;
+    }
+
+    public String getRegEmail() {
+        return reg_email;
+    }
+
+    public String getRegPassword() {
+        return reg_password;
     }
 }

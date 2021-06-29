@@ -12,12 +12,18 @@ public class LoginPage extends BasePage {
     By loginUsernameBy = By.id("loginusername");
     By loginPasswordBy = By.id("loginpassword");
     By loginButtonBy = By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]");
+    By logoutBy = By.id("logout2");
 
     public LoginPage login(String reg_username, String reg_password) {
         click(loginBy);
         writeText(loginUsernameBy, reg_username);
         writeText(loginPasswordBy, reg_password);
         click(loginButtonBy);
+        return this;
+    }
+
+    public LoginPage logout() {
+        click(logoutBy);
         return this;
     }
 }

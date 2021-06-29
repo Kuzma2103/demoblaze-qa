@@ -9,6 +9,7 @@ public class VerificationPage extends BasePage {
     }
 
     By nameOfUserBy = By.id("nameofuser");
+    By loginBy = By.id("login2");
 
     public VerificationPage verifyRegistration(String expectedText) {
         String sign_up = readTextFromAlertBox();
@@ -19,6 +20,12 @@ public class VerificationPage extends BasePage {
     public VerificationPage verifyLogin(String expectedText) {
         String user_name = readText(nameOfUserBy);
         assertStringEquals(user_name, expectedText);
+        return this;
+    }
+
+    public VerificationPage verifyLogout(String expectedText) {
+        String log_in = readText(loginBy);
+        assertStringEquals(log_in, expectedText);
         return this;
     }
 }

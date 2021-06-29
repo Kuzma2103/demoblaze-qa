@@ -9,6 +9,7 @@ public class PropertyManager {
     private static String url;
     private static String reg_email;
     private static String reg_password;
+    private static String bad_password;
 
     public static PropertyManager getInstance() {
 
@@ -26,6 +27,7 @@ public class PropertyManager {
         url = properties.getProperty("url");
         reg_email = properties.getProperty("reg_email");
         reg_password = properties.getProperty("reg_password");
+        bad_password = properties.getProperty("bad_password");
 
         return instance;
     }
@@ -45,5 +47,9 @@ public class PropertyManager {
 
     public String getRegPassword() {
         return reg_password;
+    }
+
+    public String getBadPassword() {
+        return bad_password;
     }
 }

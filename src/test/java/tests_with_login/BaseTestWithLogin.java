@@ -30,7 +30,7 @@ public class BaseTestWithLogin {
         driver.manage().window().maximize();
         driver.get(PropertyManager.getInstance().getURL());
 
-        loginPage.login(PropertyManager.getInstance().getRegEmail(), PropertyManager.getInstance().getRegPassword());
+        loginPage.login();
     }
 
     @After

@@ -16,7 +16,7 @@ public class RegistrationTest extends BaseTest {
         registrationPage = new RegistrationPage(driver);
         verificationPage = new VerificationPage(driver);
 
-        registrationPage.registration(PropertyManager.getInstance().getRegEmail(), PropertyManager.getInstance().getRegPassword());
+        registrationPage.registration();
         Thread.sleep(3000);
 
         try {

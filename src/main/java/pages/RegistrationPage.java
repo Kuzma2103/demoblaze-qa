@@ -1,23 +1,23 @@
 package pages;
 
-import org.openqa.selenium.By;
+import methods.RegistrationMethod;
 import org.openqa.selenium.WebDriver;
+import utilities.PropertyManager;
 
 public class RegistrationPage extends BasePage {
     public RegistrationPage(WebDriver driver) {
         super(driver);
     }
 
-    By signInBy = By.id("signin2");
-    By signInUsernameBy = By.id("sign-username");
-    By signInPasswordBy = By.id("sign-password");
-    By signUpBy = By.xpath("//*[@id=\"signInModal\"]/div/div/div[3]/button[2]");
+    public RegistrationMethod method;
 
-    public RegistrationPage registration(String reg_email, String reg_password) {
-        click(signInBy);
-        writeText(signInUsernameBy, reg_email);
-        writeText(signInPasswordBy, reg_password);
-        click(signUpBy);
+
+    public RegistrationPage registration() {
+        method = new RegistrationMethod(driver);
+        method.registerUser(
+                PropertyManager.getInstance().getRegEmail(),
+                PropertyManager.getInstance().getRegPassword()
+        );
         return this;
     }
 }

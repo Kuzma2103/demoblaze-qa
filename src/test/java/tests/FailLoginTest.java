@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import pages.LoginPage;
 import pages.VerificationPage;
-import utilities.PropertyManager;
 
 public class FailLoginTest extends BaseTest {
     public LoginPage loginPage;
@@ -15,7 +14,7 @@ public class FailLoginTest extends BaseTest {
         loginPage = new LoginPage(driver);
         verificationPage = new VerificationPage(driver);
 
-        loginPage.login(PropertyManager.getInstance().getRegEmail(), PropertyManager.getInstance().getBadPassword());
+        loginPage.login();
         Thread.sleep(3000);
 
         try {

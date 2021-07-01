@@ -15,7 +15,7 @@ public class LoginTest extends BaseTest {
         loginPage = new LoginPage(driver);
         verificationPage = new VerificationPage(driver);
 
-        loginPage.login(PropertyManager.getInstance().getRegEmail(), PropertyManager.getInstance().getRegPassword());
+        loginPage.login();
 
         try {
             verificationPage.verifyLogin("Welcome " + PropertyManager.getInstance().getRegEmail());
